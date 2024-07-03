@@ -1,0 +1,223 @@
+/* Seite */
+html,body
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+div.page
+{
+    margin: 0 auto;
+    clear: both;
+    width: 1100px;
+}
+
+/* Standard Styles */
+h1,h2,th
+{
+    font: 22pt 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana,
+    Helvetica, sans-serif;
+    color: #333333;
+    padding:5px;
+    margin:5px;
+}
+
+h2
+{
+    font-size: 18pt;
+}
+
+a
+{
+    text-decoration:none;
+}
+
+.redtxt
+{
+    color:red;
+    font-size: 9pt;
+}
+
+.redborder
+{
+    border:2px red solid;
+}
+
+span.useroutput
+{
+    color:#cccccc;
+}
+
+th.horizontal,th.vertikal
+{
+    font-weight: bold;
+}
+
+th.vertikal
+{
+    font-size:12pt;
+}
+
+th.horizontal
+{
+    font-size: 14pt;
+}
+
+table.einruecken
+{
+    margin-left: 50px;
+}
+
+.clearfix
+{
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+/* Formulare */
+div.review,div.zahlungsart,div.adresse
+{
+    background-color: #E6E6E6;
+    border-radius:10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+/* Tabelle */
+table,td
+{
+    border-collapse:collapse;
+}
+
+td
+{
+    padding: 5px 20px;
+}
+
+table.tabelle tr
+{
+    border-bottom: 1px #FE9A2E solid;
+}
+
+table.tabelle th
+{
+    border-top:none;
+    font-size: 12pt;
+}
+
+table.tabelle tr.extrema
+{
+    border: none;
+}
+
+/* Knöpfe */
+input[type=submit]
+{
+    border: none;
+    margin: 5px;
+}
+
+input.button,a.button,.weiter,select
+{
+    background-color: #333333;
+    color: #cccccc;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+div.btn_center
+{
+    margin: 20px;
+    clear: both;
+    text-align: center;
+}
+
+.weiter
+{
+    background-color: #FFCC66;
+    color: #333333;
+    font-size: 12pt;
+}
+
+a.zurueck
+{
+    text-decoration: underline;
+    color: #2580a2;
+}
+
+a.zurueck:hover
+{
+    color: #333333;
+}
+
+
+input[type=submit]:hover a:hover
+{
+    background-color: #2580a2;
+    color: #ffffff;
+}
+
+/* Abbruchbutton */
+.cancel
+{
+    float:right;
+    margin-right: 50px;
+}
+
+/* Text bei Erfolg */
+div.success
+{
+    margin: 0 auto;
+    background-color: #333333;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 50px;
+    z-index:2;
+}
+
+/* Lieferadresse */
+div.adresse
+{
+    width: 400px;
+}
+
+/* Zahlungsart */
+div.zahlungsart
+{
+    width: 500px;
+}
+
+/* übersicht */
+div.review
+{
+    width: 525px;
+}
+
+span.lieferkosten
+{
+    font-size: 10pt;
+    font-weight: bold;
+    float: right;
+    margin-right: 80px;
+}
+
+/* Total */
+hr
+{
+    margin: 10px 25px 0 50px;
+    border: 1.5px #000000 solid;
+}
+
+span.total
+{
+    float:right;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 10px 50px 10px 0;
+}

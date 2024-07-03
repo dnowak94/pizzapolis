@@ -1,0 +1,443 @@
+body
+{
+    font-family: Arial;
+    font-size:10pt;
+    line-height: 1.5em;
+    padding:5px;
+    margin:5px;
+}
+
+/*header formatieren*/
+header
+{
+    min-height: 80px;
+    padding:5px;
+    margin:5px;
+    background-color:#333333;
+    min-width: 615px;
+}
+
+/* Menu */
+/* Quelle http://cssmenumaker.com/menu/grey-impression-drop-down-menu-0 */
+#cssmenu {
+border: none;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font: 67.5% 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana, Helvetica,
+    sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+#cssmenu ul {
+background: #333333;
+    height: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#cssmenu li {
+float: left;
+    padding: 0px;
+}
+#cssmenu li a {
+background: #333333 url('Pictures/seperator.gif') bottom right no-repeat;
+    display: block;
+    font-weight: normal;
+    line-height: 35px;
+    margin: 0px;
+    padding: 0px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+#cssmenu > ul > li > a {
+color: #cccccc;
+}
+#cssmenu ul ul a {
+color: #cccccc;
+}
+#cssmenu li > a:hover,
+#cssmenu ul li:hover > a {
+background: #2580a2 url('Pictures/hover.png') bottom center no-repeat;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#cssmenu li ul {
+background: #333333;
+    display: none;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    position: absolute;
+    width: 225px;
+    z-index: 200;
+    /*top:1em;
+      /*left:0;*/
+
+}
+#cssmenu li:hover ul {
+display: block;
+}
+#cssmenu li li {
+background: url('Pictures/sub_sep.gif') bottom left no-repeat;
+    display: block;
+    float: none;
+    margin: 0px;
+    padding: 0px;
+    width: 225px;
+}
+#cssmenu li:hover li a {
+background: none;
+}
+#cssmenu li ul a {
+display: block;
+    height: 35px;
+    font-size: 12px;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px 10px 0px 15px;
+    text-align: left;
+}
+#cssmenu li ul a:hover,
+#cssmenu li ul li:hover > a {
+background: #2580a2 url('Pictures/hover_sub.png') center left no-repeat;
+    border: 0px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#cssmenu p {
+clear: left;
+}
+
+/* Seite */
+div.page
+{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+/* Login */
+div.login,div.formular
+{
+    margin:0 auto;
+    margin-top: 150px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #79bbff;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+#login,#formular
+{
+    background-color: #333333;
+    width: 100%;
+    padding: 5px;
+}
+
+#login td,#formular td
+{
+    padding: 10px;
+}
+
+input.login {
+    margin-left:5px;
+}
+
+label.login
+{
+    color: #cccccc;
+    font-weight: 500;
+    font-size: 12pt;
+}
+
+div.logout {	float:right;
+
+}
+
+/* Seitenüberschrift */
+span.ueberschrift
+{
+    font: 22pt 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana,
+    Helvetica, sans-serif;
+    padding:5px;
+    margin:5px;
+}
+
+/* Horizontale Linie */
+hr
+{
+    border: 2px solid #79bbff;
+    margin: 5px;
+    width: 100%;
+}
+
+/* Tabellen */
+table, td
+{
+    border-collapse: collapse;
+}
+
+td
+{
+    padding: 5px 20px;
+}
+
+#table_all th
+{
+    background-color: #79bbff;
+}
+
+#table_all, #table_all td
+{
+    border:1px #79bbff solid;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#table_all
+{
+    width: 100%;
+}
+
+#table_all td
+{
+    text-align: center;
+}
+
+/* standard style definieren*/
+.redtxt{	color:red;
+					    }
+.redborder	{
+                border:2px red solid;
+									}
+a
+{
+    text-decoration: none;
+}
+
+a.right
+{
+    float: right;
+}
+
+div.right
+{
+    float: right;
+    position: relative;
+    top:-10px;
+}
+
+div.btn_center
+{
+    clear: both;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.clearfix
+{
+    clear: both;
+    display: block;
+}
+
+h1,h2,th
+{
+    font: 22pt 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana,
+    Helvetica, sans-serif;
+    color: #333333;
+    padding:5px;
+    margin:5px;
+}
+
+th.horizontal,th.vertikal
+{
+    font-weight: bold;
+}
+th.vertikal
+{
+    font-size:12pt;
+}
+
+th.horizontal
+{
+    font-size: 14pt;
+}
+
+/* Knöpfe */
+input.button,a.button,a.cancel, a.right, div.deleteconfirm input.button
+{
+    color: #FFFFFF;
+    border:none;
+    padding: 5px;
+    font-size: 12pt;
+    border-radius: 10px;
+    background-color: #79bbff;
+}
+
+/* Formular */
+div.formular
+{
+    margin-top: 20px;
+    width: 800px;
+}
+
+span.formular
+{
+    color: #cccccc;
+    font-weight: 500;
+    font-size: 12pt;
+}
+
+textarea
+{
+    width: 100%;
+    height: 150px;
+}
+
+span.timestamp
+{
+    color: #cccccc;
+}
+
+/* Speichern */
+input.button,a.cancel
+{
+    margin-top: 10px;
+    background-color: #333333;
+    color: #cccccc;
+}
+
+a.cancel:hover,input.button:hover
+{
+    background-color: #2580a2;
+}
+
+/* Schließen */
+a.cancel
+{
+    float: right;
+    margin: 0 0 20px 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Löschen bestätigen */
+div.deleteconfirm
+{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px #79bbff solid;
+    padding: 10px;
+}
+
+div.deleteconfirm span
+{
+    font-weight: bold;
+}
+
+/* Gewinn */
+div.gewinn
+{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+table.gewinn
+{
+    width: 100%;
+}
+
+table.gewinn td, table.gewinn th
+{
+    border:1px #000000 solid;
+}
+
+table.gewinn td
+{
+    vertical-align: top;
+}
+
+table.gewinn th
+{
+    font-weight: bold;
+}
+
+table.gewinn a
+{
+    color: #333333;
+}
+
+table.gewinn a:hover, a.link:hover
+{
+    text-decoration: underline;
+    color: #2580a2;
+}
+
+table.gewinn th.level1
+{
+    height: 80px;
+    font-size: 16pt;
+    clear: both;
+}
+
+table.gewinn th.level2
+{
+    font-size: 14pt;
+    text-align: left;
+}
+
+table.gewinn th.ueberschrift
+{
+    font-size: 11pt;
+    text-align: left;
+}
+
+table.gewinn th.theader
+{
+    font-size: 10pt;
+}
+
+table.gewinn td.left
+{
+    text-align: left;
+}
+
+table.gewinn td.center
+{
+    text-align: center;
+}
+
+table.gewinn td.right
+{
+    text-align: right;
+}
+
+table.gewinn input.feld
+{
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+
+table.mitte
+{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 400px;
+}
+
+table.mitte td
+{
+    font-weight: bold;
+    font-size: 12pt;
+}

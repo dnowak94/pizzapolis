@@ -1,0 +1,1045 @@
+/* standard style definieren*/
+table,td
+{
+    border-collapse:collapse;
+}
+
+td
+{
+    padding: 5px 20px;
+}
+
+td.error
+{
+    width: 500px;
+    padding: 5px;
+}
+
+table.tabelle tr
+{
+    border-bottom: 1px #FE9A2E solid;
+}
+
+table.tabelle th
+{
+    border-top:none;
+    font-size: 12pt;
+}
+
+table.tabelle tr.extrema
+{
+    border: none;
+}
+
+td.button
+{
+    padding: 10px 20px;
+}
+
+h1,h2,th
+{
+    font: 22pt 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana,
+    Helvetica, sans-serif;
+    color: #333333;
+    padding:5px;
+    margin:5px;
+}
+
+h2
+{
+    font-size: 18pt;
+    margin-left: 50px;
+}
+
+th.horizontal,th.vertikal
+{
+    font-weight: bold;
+}
+th.vertikal
+{
+    font-size:12pt;
+}
+
+th.horizontal
+{
+    font-size: 14pt;
+}
+
+.redtxt, span.errorlogin
+{
+    color:red;
+    font-size: 9pt;
+}
+
+.redborder, input.errorlogin
+{
+    border:2px red solid;
+}
+
+span.useroutput
+{
+    color:#cccccc;
+}
+
+span.ueberschrift
+{
+    font-size: 14pt;
+    color: #333333;
+}
+
+input.klein,td.laenge .redborder
+{
+    width: 40px;
+    text-align: right;
+}
+span.klein
+{
+    font-size: 10pt;
+}
+
+span.unter_bild
+{
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+a
+{
+    text-decoration:none;
+}
+
+a.link
+{
+    color:#333333;
+}
+
+div.right
+{
+    float: right;
+    position: relative;
+    top:-10px;
+}
+
+.clearfix
+{
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+
+p
+{
+    padding:5px;
+    margin: 0;
+}
+
+textarea {
+    display: block;
+    width: 150px;
+}
+
+/* neben Sidebar */
+div.bestellungen,div.news,div.angebot,div.news_all,div.no-rows,div.alte_bestellungen,div.register,
+div.adressbuch,div.kraftstoffkosten,div.verkauf,div.lieferzeiten,div.details,div.passwort
+{
+    float: left;
+}
+
+/* Formulare */
+div.formular,div.gerichteverwalten,div.infobox,div.register,div.adressbuch,div.adresse,div.gerichttabelle,div.angebot,
+div.bestellungen,div.bestellen,div.shoppingCart,div.alte_bestellung,div.details,div.lieferzeiten,div.gewinn,
+div.einstellungen,div.kraftstoffkosten,div.verkauf,div.deleteconfirm,div.passwort,div.news,div.gerichte,div.side_news,
+div.box,div.news_all,div.no-rows
+{
+    background-color: #E6E6E6;
+    border-radius:10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+/* Löschen bestätigen */
+div.deleteconfirm
+{
+    float: left;
+    width: 400px;
+    margin-left: 50px;
+}
+
+div.deleteconfirm span
+{
+    font-weight: bold;
+}
+
+/* Knöpfe */
+input[type=submit],a.button,.cancel, a.add
+{
+    background-color: #333333;
+    color: #cccccc;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+a.add
+{
+    float: right;
+}
+
+input[type=submit]
+{
+    border: none;
+    margin: 5px;
+}
+
+input[type=submit]:hover,a.button:hover,a.add:hover,.cancel:hover
+{
+    background-color: #2580a2;
+    color: #ffffff;
+}
+
+div.btn_center
+{
+    margin-top: 10px;
+    text-align: center;
+}
+
+select
+{
+    background-color: #333333;
+    color: #cccccc;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+span.required
+{	font-size:10pt;
+    color:#333333;
+    font-style:italic;
+}
+
+/* Adressenverwaltung */
+td.numbering,.displayadress
+{
+    vertical-align: top;
+}
+
+td.numbering
+{
+    width: 20px;
+}
+
+table.adressbuch ul
+{
+    list-style: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+    text-align: left;
+}
+
+
+/*header formatieren*/
+header
+{
+	min-height: 80px;
+	padding:5px;
+	margin:5px;
+	background-color:#333333;
+    min-width: 615px;
+}
+
+/* Menu */
+/* Quelle : http://cssmenumaker.com/menu/grey-impression-drop-down-menu-0 */
+#cssmenu,span.logout {
+  border: none;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  font: 67.5% 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana, Helvetica,
+  sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  width: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#cssmenu ul,span.logout {
+  background: #333333;
+  height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu li,span.logout {
+  float: left;
+  padding: 0px;
+}
+#cssmenu li a,span.logout {
+  background: #333333 url('Pictures/menu/header/seperator.gif') bottom right no-repeat;
+  display: block;
+  font-weight: normal;
+  line-height: 35px;
+  margin: 0px;
+  padding: 0px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+#cssmenu > ul > li > a {
+  color: #cccccc;
+}
+#cssmenu ul ul a {
+  color: #cccccc;
+}
+#cssmenu li > a:hover,
+#cssmenu ul li:hover > a,
+span.logout:hover
+{
+  background: #2580a2 url('Pictures/menu/header/hover.png') bottom center no-repeat;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#cssmenu li ul {
+  background: #333333;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 225px;
+  z-index: 200;
+  /*top:1em;
+	/*left:0;*/
+
+}
+#cssmenu li:hover ul {
+  display: block;
+}
+#cssmenu li li {
+  background: url('Pictures/menu/header/sub_sep.gif') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 225px;
+}
+#cssmenu li:hover li a {
+  background: none;
+}
+#cssmenu li ul a {
+  display: block;
+  height: 35px;
+  font-size: 12px;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px 10px 0px 15px;
+  text-align: left;
+}
+#cssmenu li ul a:hover,
+#cssmenu li ul li:hover > a {
+  background: #2580a2 url('Pictures/menu/header/hover_sub.png') center left no-repeat;
+  border: 0px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#cssmenu p {
+  clear: left;
+}
+
+/* Kategorien */
+/* source : http://cssmenumaker.com/menu/vertical-massive-blue */
+#kategorie {
+    background: #333;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 12em;
+    float: left;
+}
+#kategorie li {
+    font: 10pt 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana,
+    Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#kategorie a {
+    background: #333;
+    border-bottom: 1px solid #393939;
+    color: #ccc;
+    display: block;
+    margin: 0;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: normal;
+}
+#kategorie a:hover {
+    background: #2580a2 url('Pictures/menu/kategorie/hover.gif') left center no-repeat;
+    color: #fff;
+    padding-bottom: 8px;
+}
+
+#kategorie li:first-child
+{
+    text-align: center;
+    color: #cccccc;
+    font: 16pt 'Lucida Sans Unicode', 'Bitstream Vera Sans', 'Trebuchet Unicode MS', 'Lucida Grande', Verdana,
+    Helvetica,sans-serif;
+}
+
+/* login formatieren */
+div.login 
+{	
+	background-color:#333333;
+    color: #cccccc;
+	width: 320px;
+	height: 70px;
+	float:right;
+    position: relative;
+    top: -15px;
+}
+
+table.login,td.login
+{
+    padding:2px;
+    margin:0px;
+}
+
+
+input.login,input.errorlogin
+{
+    width: 110px;
+    margin-left:5px;
+}
+
+input.btnlogin
+{
+    background-color: #333333;
+    border:none;
+    font: bold 14px 'Lucida Sans Unicode','Bitstream Vera Sans','Trebuchet Unicode MS','Lucida Grande',Verdana,
+    Helvetica,sans-serif;
+    color: #cccccc;
+    height: 20px;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+}
+
+td.login ,span.register
+{	
+	font-size:8pt;
+	color:#cccccc;
+}
+
+span.register
+{
+	margin-left:5px;
+}
+
+span.errorlogin
+{
+    font-size: 8pt;
+    margin-left: 30px;
+}
+
+/* Logout */
+span.logout
+{
+    float: right;
+    color: #cccccc;
+    margin-right: 20px;
+    background-color: #333333;
+    background-image: none;
+}
+
+/* Seite */
+html,body
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+div.page
+{
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+}
+
+/* Homepage */
+
+/* Sidebar */
+div.sidebar
+{
+    border-right:1px #A4A4A4 solid;
+    width:200px;
+    height:100%;
+    padding: 10px;
+    float: left;
+    margin-right: 30px;
+}
+
+div.sidebar td
+{
+    padding: 0;
+}
+
+div.sidebar ul
+{
+    list-style: none;
+    margin: 2px 0;
+    padding-left: 20px;
+}
+
+div.box
+{
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* letzte Bestellungen */
+div.letzte
+{
+    padding: 0;
+    height:150px;
+    overflow-y:scroll;
+}
+img.klein
+{
+    width: 70px;
+    height: 70px;
+}
+
+p.side_gericht, span.nbbenutzer
+{
+    font-size: 8pt;
+    line-height: 1em;
+}
+
+p.side_zutaten
+{
+    font-size: 7pt;
+    line-height: 1em;
+}
+
+/* Sidebar News */
+div.side_news
+{
+    padding: 0;
+    padding-left: 20px;
+    height: 150px;
+    overflow-y: scroll;
+}
+
+h4
+{
+    color: #333333;
+    margin: 3px 0;
+    font-size: 11pt;
+}
+
+p.text
+{
+    margin: 0;
+    padding: 0;
+    margin-left: 6px;
+    font-size: 9pt;
+}
+
+/* Homepage News */
+h3
+{
+    color: #333333;
+    font-weight: normal;
+    font-size: 14pt;
+    margin: 5px 0;
+}
+
+div.news
+{
+    width: 200px;
+}
+
+p.news
+{
+    font-size: 10pt;
+}
+
+span.mehr,span.useroplink
+{
+    color: #2580a2;
+}
+
+span.mehr:hover,span.useroplink:hover
+{
+    text-decoration: underline;
+    color: #333333;
+}
+
+p.update
+{
+    font-size: 8pt;
+    font-style: italic;
+}
+
+div.news_all
+{
+    width: 400px;
+}
+
+div.einrucken
+{
+    margin-left: 20px;
+}
+
+div.content
+{
+    padding-left:10px;
+}
+
+/* Gerichte */
+div.gerichte
+{
+    width: 400px;
+    padding: 5px;
+    float: right;
+}
+
+p.gericht
+{
+    font-size: 14pt;
+}
+
+p.zutaten
+{
+    color: #666666;
+}
+
+/* Text bei Erfolg */
+div.success
+{
+    margin: 0 auto;
+    position:absolute;
+    background-color: #333333;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+/* Registrierung */
+div.register
+{
+    width: 625px;
+}
+
+/* Profil verwaltung */
+div.infobox
+{
+    width: 500px;
+}
+
+table.info td
+{
+    padding-left: 20px;
+}
+
+table.info td.username
+{
+    width: 180px;
+    padding: 5px;
+}
+
+table.info td.username .redborder,td.username input[type=text]
+{
+    width: 100px;
+}
+
+div.passwort
+{
+    width: 700px;
+}
+
+/* Adressbuch */
+div.adressbuch
+{
+    width: 800px;
+}
+
+div.adresse
+{
+    width: 500px;
+}
+
+table.adressen td
+{
+    padding: 5px 20px;
+}
+
+span.abkuerzung
+{
+    font-size: 12pt;
+}
+
+/*Abbruchbuttons */
+.cancel
+{
+    float:right;
+}
+
+/*Bestellungsseite */
+
+/* Suchfeld */
+div.suchen
+{
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #333333;
+    width: 250px;
+    float: left;
+}
+
+div.suchen span
+{
+    color: #cccccc;
+}
+
+div.suchen td
+{
+    padding: 0 10px;
+}
+
+form
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Gerichtliste, Warenkorb */
+div.bestellen, div.shoppingCart
+{
+    margin: 0;
+    margin-left:10px;
+    float: left;
+}
+
+div.bestellen
+{
+    width: 500px;
+}
+
+span.gericht
+{
+    font-size: 14pt;
+}
+
+span.zutaten
+{
+    font-size:8pt;
+}
+
+/* Warenkorb */
+div.shoppingCart
+{
+    width: 310px;
+}
+
+div.shoppingCart table td
+{
+    padding: 5px;
+}
+
+/* +/- knöpfe formatieren */
+img.plusminus
+{
+    float:left;
+}
+
+span.quantity
+{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+td.quantity
+{
+    width: 70px;
+}
+
+span.lieferkosten
+{
+    font-size: 10pt;
+    font-weight: bold;
+    float: right;
+    margin-right: 50px;
+}
+
+span.total
+{
+    float:right;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
+/*alte Bestellungen*/
+div.alte_bestellungen
+{
+    width: 800px;
+}
+
+/* aktuelle Bestellungen */
+
+#bestellungen td
+{
+    text-align: center;
+    width: auto;
+}
+
+div.bestellungen
+{
+    width: 800px;
+}
+
+span.adresse
+{
+    font-size: 10pt;
+}
+
+div.details
+{
+    width: 700px;
+}
+
+div.details table td.no-border
+{
+    border:none;
+}
+
+div.details table td
+{
+    width: 200px;
+    padding-left: 20px;
+}
+
+div.details table td, div.details table th
+{
+    border: 1px #FE9A2E solid;
+}
+
+td.preis
+{
+    text-align: right;
+    padding-right: 20px;
+}
+
+td.anzahl
+{
+    text-align: center;
+}
+
+/* angebotene Gerichte */
+
+div.angebot
+{
+    margin-left: 20px;
+    width: 80%;
+}
+
+div.angebot hr
+{
+    width:100%;
+    margin-top: 15px;
+    border: 1.5px #FE9A2E solid;
+}
+
+div.gerichttabelle table.tabelle
+{
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+/* angebotene Gerichte hinzufügen/bearbeitenen */
+div.gerichteverwalten
+{
+    width: 80%;
+}
+
+input.preis
+{
+    width:50px;
+}
+
+span.euro
+{
+    padding: 0 5px;
+}
+
+/* Lieferzeiten */
+div.lieferzeiten
+{
+    width: 725px;
+}
+
+a.add
+{
+    float:right;
+    font-weight: normal;
+    font-size: 9pt;
+}
+
+div.lieferzeiten th.horizontal
+{
+    text-align: left;
+}
+
+span.th-center
+{
+    padding-left:100px;
+}
+
+/* Einstellungen des Restaurants */
+div.einstellungen
+{
+    float: left;
+    margin-top: 50px;
+    width: 600px;
+}
+
+div.einstellungen span.ueberschrift
+{
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+div.einstellungen table
+{
+    margin-left: 10px;
+}
+
+/* Gewinn */
+div.gewinn
+{
+    width: 100%;
+}
+
+table.gewinn
+{
+    width: 100%;
+}
+
+table.gewinn td, table.gewinn th
+{
+    border:1px #000000 solid;
+}
+
+table.gewinn td
+{
+    vertical-align: top;
+}
+
+table.gewinn th
+{
+    font-weight: bold;
+}
+
+table.gewinn a
+{
+    color: #333333;
+}
+
+table.gewinn a:hover, a.link:hover
+{
+    text-decoration: underline;
+    color: #2580a2;
+}
+
+table.gewinn th.level1
+{
+    height: 80px;
+    font-size: 16pt;
+    clear: both;
+}
+
+table.gewinn th.level2
+{
+    font-size: 14pt;
+    text-align: left;
+}
+
+table.gewinn th.ueberschrift
+{
+    font-size: 11pt;
+    text-align: left;
+}
+
+table.gewinn th.theader
+{
+    font-size: 10pt;
+}
+
+table.gewinn td.left
+{
+    text-align: left;
+}
+
+table.gewinn td.center
+{
+    text-align: center;
+}
+
+table.gewinn td.right
+{
+    text-align: right;
+}
+
+table.gewinn input.feld
+{
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+
+table.mitte
+{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 400px;
+}
+
+table.mitte td
+{
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+/* verkaufte Produkte */
+div.verkauf
+{
+    width: 700px;
+    height: auto;
+}
+
+/* Kraftstoffkosten */
+div.kraftstoffkosten
+{
+    width: 500px;
+}
+
+/* Footer */
+footer {	
+			bottom:0px;
+			font-size:9pt;
+			font-style:italic;
+			color:#2E2E2E;
+			position: absolute;
+							}																																															
