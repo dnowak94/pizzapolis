@@ -14,7 +14,7 @@ if((isset($_GET['page']))&&($_GET['page']=='pwvergessen'))
     if(isset($_POST['button_send']))
     {
         $query="SELECT id_benutzer,`dtE-Mail` FROM tblBenutzer WHERE `dtE-Mail`='".
-            mysql_real_escape_string($_POST['DATA_email'])."'";
+            $db->real_escape_string($_POST['DATA_email'])."'";
         $result=mysqli_query($db,$query);
         if(mysqli_num_rows($result)==1)
         {
@@ -23,7 +23,7 @@ if((isset($_GET['page']))&&($_GET['page']=='pwvergessen'))
                     SET dtAktivierungscode='".$code."'
                     WHERE id_benutzer=".db_result($result,0,'id_benutzer');
             mysqli_query($db,$query);
-            $to=mysql_real_escape_string($_POST['DATA_email']);
+            $to=$db->real_escape_string($_POST['DATA_email']);
             $subject='pizzapolis.lu - Passwort vergessen';
             $message='<p>Sie können ihr Passwort mit folgendem link zurücksetzen:</p>'.'<p><a href="'.
                 (isset($_SERVER['HTTPS'])?'https://':'http://').$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'].
@@ -42,14 +42,14 @@ valid_id('tblBenutzer','id_benutzer',$_GET['id']))
 {
     $query="SELECT id_benutzer FROM tblBenutzer
             WHERE dtAktivierungscode='".$_GET['1timecode']."'
-            AND id_benutzer=".mysql_real_escape_string($_GET['id']);
+            AND id_benutzer=".$db->real_escape_string($_GET['id']);
     $result=mysqli_query($db,$query);
     if(mysqli_num_rows($result)>0)
     {
         $valid=true;
         $query="UPDATE tblBenutzer
                 SET dtAktivierungscode=NULL
-                WHERE id_benutzer=".mysql_real_escape_string($_GET['id']);
+                WHERE id_benutzer=".$db->real_escape_string($_GET['id']);
         mysqli_query($db,$query);
         //Passwort generieren
         if(isset($_POST['btngenerate']))
@@ -68,7 +68,7 @@ valid_id('tblBenutzer','id_benutzer',$_GET['id']))
                 if($_POST['DATA_password1']==$_POST['DATA_password2'])
                 {
                     $query="UPDATE tblBenutzer
-                            SET dtPasswort=SHA1('".mysql_real_escape_string($_POST['DATA_password1'])."')
+                            SET dtPasswort=SHA1('".$db->real_escape_string($_POST['DATA_password1'])."')
                             WHERE id_benutzer=".$_SESSION['id_user'];
                     mysqli_query($db,$query);
                 }

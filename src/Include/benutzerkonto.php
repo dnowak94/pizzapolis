@@ -43,7 +43,7 @@ if($_SESSION['loggedin']==1)
                     "dtUsername='".db_update($_POST['DATA_username'])."'".
                     " WHERE id_benutzer=".(isset($_SESSION['id_user'])?$_SESSION['id_user']:$_SESSION['restaurant']);
                 mysqli_query($db,$query);
-                success('Ihr Benutzername wurde erfolgreich auf "'.mysql_real_escape_string($_POST['DATA_username']).
+                success('Ihr Benutzername wurde erfolgreich auf "'.$db->real_escape_string($_POST['DATA_username']).
                     '" geändert.');
             }
             else success('Ihr Benutzername wurde nicht geändert.');
@@ -74,7 +74,7 @@ if($_SESSION['loggedin']==1)
         {
             $query= "SELECT dtPasswort FROM tblBenutzer
                     WHERE id_benutzer=".(isset($_SESSION['id_user'])?$_SESSION['id_user']:$_SESSION['restaurant']).
-                    " AND dtPasswort=SHA1('".mysql_real_escape_string($_POST['DATA_oldpassword'])."')";
+                    " AND dtPasswort=SHA1('".$db->real_escape_string($_POST['DATA_oldpassword'])."')";
             $result=mysqli_query($db,$query);
 
             //altes Passwort korrekt?
@@ -87,7 +87,7 @@ if($_SESSION['loggedin']==1)
                     if($_POST['DATA_newpassword1']==$_POST['DATA_newpassword2'])
                     {
                         $query="UPDATE tblBenutzer
-                                SET dtPasswort=SHA1('".mysql_real_escape_string($_POST['DATA_newpassword1'])."')
+                                SET dtPasswort=SHA1('".$db->real_escape_string($_POST['DATA_newpassword1'])."')
                                 WHERE id_benutzer=".(isset($_SESSION['id_user'])?$_SESSION['id_user']:
                             $_SESSION['restaurant']);
                         mysqli_query($db,$query);

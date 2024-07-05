@@ -44,7 +44,7 @@ if(isset($_POST['BUTTON_sendLogin']))
         AND
         dtPasswort=SHA1('".db_update($_POST['DATA_password'])."')
         AND istAdmin=1";
-        $result=mysqli_query($qlogin,$db);
+        $result=mysqli_query($db,$qlogin);
         if(mysqli_num_rows($result)==1)
         {
             $_SESSION['cmsloggedin']=1;

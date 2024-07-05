@@ -7,14 +7,14 @@ if(($_SESSION['loggedin']==1)&&(isset($_SESSION['id_user'])))
     // Eingabe
 
     // GET id und kategorie speichern
-    $id=(isset($_GET['id'])?(valid_id('tblGericht','id_gericht',$_GET['id'])?mysql_real_escape_string($_GET['id']):''):
+    $id=(isset($_GET['id'])?(valid_id('tblGericht','id_gericht',$_GET['id'])?$db->real_escape_string($_GET['id']):''):
         '');
 
     $kategorie= (isset($_GET['kategorie'])?(valid_id('tblKategorie','id_kategorie',$_GET['kategorie'])?
-        mysql_real_escape_string($_GET['kategorie']):''):'');
+        $db->real_escape_string($_GET['kategorie']):''):'');
 
     // String des gesuchten Gerichtes speichern
-    $search=(isset($_GET['search'])?mysql_real_escape_string($_GET['search']):'');
+    $search=(isset($_GET['search'])?$db->real_escape_string($_GET['search']):'');
 
     // Ausgabe
 
@@ -65,7 +65,7 @@ if(($_SESSION['loggedin']==1)&&(isset($_SESSION['id_user'])))
         ($kategorie!=''?' WHERE fi_kategorie='.$kategorie:'').
         ' ORDER by dtBezeichnung';
     if(isset($_GET['search']))
-        $query="SELECT * FROM tblGericht WHERE dtBezeichnung LIKE '%".mysql_real_escape_string($_GET['search'])
+        $query="SELECT * FROM tblGericht WHERE dtBezeichnung LIKE '%".$db->real_escape_string($_GET['search'])
             ."%' ORDER by dtBezeichnung";
 
     $result_all=mysqli_query($db,$query);

@@ -56,9 +56,9 @@ if(isset($_POST['button_send']))
                 $id.")";
         mysqli_query($db,$query);
 
-        $to=mysql_real_escape_string($_POST['DATA_email1']);
-        $fullname=  mysql_real_escape_string($_POST['DATA_vorname']).' '.
-                    mysql_real_escape_string($_POST['DATA_nachname']);
+        $to=$db->real_escape_string($_POST['DATA_email1']);
+        $fullname=  $db->real_escape_string($_POST['DATA_vorname']).' '.
+                    $db->real_escape_string($_POST['DATA_nachname']);
         $subject='pizzapolis.lu - Aktivierung Ihres Kontos';
         $message='<p>Willkommen bei pizzapolis.lu!</p><p>Vielen Dank für Ihre Registrierung. Um Ihr Konto zu '.
             'aktivieren <a href="https://'.$_SERVER['SERVER_NAME'].
@@ -74,13 +74,13 @@ if(isset($_POST['button_send']))
 if((isset($_GET['id']))&&(isset($_GET['activationcode']))&&(valid_id('tblBenutzer','id_benutzer',$_GET['id'])))
 {
     $showForm=false;
-    $query= "SELECT dtAktivierungscode FROM tblBenutzer WHERE id_benutzer=".mysql_real_escape_string($_GET['id']).
-            " AND dtAktivierungscode='".mysql_real_escape_string($_GET['activationcode'])."'";
+    $query= "SELECT dtAktivierungscode FROM tblBenutzer WHERE id_benutzer=".$db->real_escape_string($_GET['id']).
+            " AND dtAktivierungscode='".$db->real_escape_string($_GET['activationcode'])."'";
     $result=mysqli_query($db,$query);
     if(mysqli_num_rows($result)==1)
     {
         $query="UPDATE tblBenutzer SET istAktiviert=1,dtAktivierungscode=NULL WHERE id_benutzer=".
-            mysql_real_escape_string($_GET['id']);
+            $db->real_escape_string($_GET['id']);
         mysqli_query($db,$query);
         success('Ihr Konto wurde erfolgreich aktiviert, sie können sich nun einloggen.');
     }

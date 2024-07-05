@@ -2,24 +2,19 @@
 // Daten aus der Datenbank anzeigen
 function db_result($result,$i,$field)
 {
-    
-    return utf8_encode(mysql_result($result,$i,$field));
-}
-
-function mysql_result($db, $tableName, $result, $i, $field) {
-    $query="SELECT ORDNIDAL_POSITION FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= N'".$tableName.
-    "' AND COLUMN_NAME=N'".$field."'";
-    $col_index=mysqli_query($db, $query);
-    $col_index = $col_index - 1;
-    mysqli_data_seek($result, $i);
-    $row = $result->fetch_row();
-    return $row[$col_index];
+    $result->data_seek($i);
+    $row=$result->fetch_assoc();
+    return $row[$field];
 }
 
 // Daten in die Datenbank schreiben
 function db_update($feld)
 {
-    return mysql_real_escape_string(utf8_decode($feld));
+    return $GLOBALS['db']->real_escape_string($feld);
+}
+
+function query($query) {
+    return $GLOBALS['db']->query($query);
 }
 
 // leere Felder suchen
@@ -100,7 +95,7 @@ function error_check($inputs)
                     // E-Mail exists check
                     $query="SELECT id_benutzer,`dtE-Mail` FROM tblBenutzer WHERE `dtE-Mail`='".$value."'".
                         (isset($_SESSION['id_user'])?' AND id_benutzer<>'.$_SESSION['id_user']:'');
-                    $result=mysqli_query($query,$GLOBALS['db']);
+                    $result=query($query,$GLOBALS['db']);
                     if(mysqli_num_rows($result)==1)
                         $errors[$i]='Die eingebene E-Mail existiert bereits.';
                 }
@@ -150,12 +145,12 @@ function username_check($username)
     if($username!='')
     {
         //check if username exists
-        $username=mysql_real_escape_string($username);
+        $username=$db->real_escape_string($username);
         $query= "SELECT dtUsername FROM tblBenutzer
                 WHERE dtUsername='".$username."'";
         if((isset($_SESSION['id_user']))||(isset($_SESSION['restaurant'])))
             $query.=" AND id_benutzer<>".(isset($_SESSION['id_user'])?$_SESSION['id_user']:$_SESSION['restaurant']);
-        $result=mysqli_query($query,$GLOBALS['db']);
+        $result=query($query,$GLOBALS['db']);
         if(mysqli_num_rows($result)>0)
         {
             $errormsg='Der Benutzername "'.$_POST['DATA_username'].'" existiert bereits!';
@@ -190,12 +185,12 @@ function check_preis($preis)
 function valid_id($tabelle,$id_feld,$id)
 {
     $valid=false;
-    $id=mysql_real_escape_string($id);
+    $id=$GLOBALS['db']->real_escape_string($id);
     if(is_numeric($id))
     {
         $query= "SELECT ".$id_feld." FROM ".$tabelle.
                 " WHERE ".$id_feld."=".$id;
-        $result=mysqli_query($query,$GLOBALS['db']);
+        $result=$GLOBALS['db']->query($query);
         if(mysqli_num_rows($result)==1) $valid=true;
     }
     return $valid;
@@ -224,7 +219,7 @@ function timetofloat($zeit)
 function opened_day($tag)
 {
     $query="SELECT * FROM tblLieferzeit";
-    $result=mysqli_query($query,$GLOBALS['db']);
+    $result=query($query,$GLOBALS['db']);
     $wochentage=array(
         'Mon'=>1,
         'Tue'=>2,
