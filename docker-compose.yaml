@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=caching_sha2_password
+    volumes:
+    - "./.data/db:/var/mysql"
+    - "./mysql:/etc/mysql/conf.d"
+    - "./sql:/docker-entrypoint-initdb.d"
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+      - MYSQL_USER=pizzapolis
+      - MYSQL_PASSWORD=P@ssw0rd
+      - MYSQL_DATABASE=pizzapolis
+  web:
+    image: php8
+    volumes:
+      - "./src:/var/www/html"
+    ports:
+    - "8080:80"
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "8081:80"
