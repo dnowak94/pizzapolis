@@ -27,7 +27,7 @@ $pdf->MultiCell(50,8,'Pizzapolis'."\n".$info['strasse']."\n".$info['postleitzahl
 $pdf->Ln(10);
 // Rechnungsnummer und Bestellungsnummer abrufen
 $query="SELECT MAX(id_rechnung) AS 'id_rechnung',fi_bestellung FROM tblRechnung";
-$result=mysqli_query($query,$GLOBALS['db']);
+$result=mysqli_query($GLOBALS['db'], $query);
 $pdf->SetFontSize(16);
 $pdf->Cell(0,5,'Rechnung nr. '.db_result($result,0,'id_rechnung'),0,0,'C');
 $pdf->Ln(10);
@@ -47,7 +47,7 @@ else
             " AND dtStandard=1".
             " AND fi_kunde=id_benutzer";
 }
-$result=mysqli_query($query,$GLOBALS['db']);
+$result=mysqli_query($GLOBALS['db'], $query);
 
 
 if(mysqli_num_rows($result)>0)
@@ -63,14 +63,14 @@ if(mysqli_num_rows($result)>0)
 $pdf->SetY($pdf->GetY()+20);
 // bestellungsnummer herausfinden
 $query="SELECT MAX(id_bestellung) AS 'id_bestellung' FROM tblBestellung";
-$result=mysqli_query($query,$GLOBALS['db']);
+$result=mysqli_query($GLOBALS['db'],$query);
 
 // Gerichte für die Rechnung abfragen
 $query= "SELECT * FROM tblBestehen_aus,tblGericht
         WHERE fi_bestellung=".db_result($result,0,'id_bestellung').
         " AND fi_gericht=id_gericht";
 
-$result=mysqli_query($query,$GLOBALS['db']);
+$result=mysqli_query($GLOBALS['db'], $query);
 
 // Tabelle mit den Gerichten erstellen
 //table header
@@ -107,6 +107,6 @@ $pdf->Cell(30,8,number_format($_SESSION['Payment_Amount'],2,',','.').iconv('UTF-
 $pdf->Footer();
 
 $query="SELECT dtUsername FROM tblBenutzer WHERE id_benutzer=".$_SESSION['id_user'];
-$result=mysqli_query($query,$GLOBALS['db']);
+$result=mysqli_query($GLOBALS['db'], $query);
 $pdf->Output($path.'Rechnungen/rechnung_'.db_result($result,0,'dtUsername').'_'.date('Ymd@H-i').'.pdf','F');
 ?>

@@ -5,14 +5,14 @@ if(isset($_SESSION['restaurant']))
     if(!isset($value)) $value='';
 
     // GET, POST id und kategorie speichern
-    $id=(isset($_GET['id'])?(valid_id('tblGericht','id_gericht',$_GET['id'])?mysql_real_escape_string($_GET['id']):''):
-        (isset($_POST['id'])?(valid_id('tblGericht','id_gericht',$_POST['id'])?mysql_real_escape_string($_POST['id']):''):
+    $id=(isset($_GET['id'])?(valid_id('tblGericht','id_gericht',$_GET['id'])?$db->real_escape_string($_GET['id']):''):
+        (isset($_POST['id'])?(valid_id('tblGericht','id_gericht',$_POST['id'])?$db->real_escape_string($_POST['id']):''):
             ''));
 
 
     $kategorie= (isset($_GET['kategorie'])?(valid_id('tblKategorie','id_kategorie',$_GET['kategorie'])?
-                mysql_real_escape_string($_GET['kategorie']):''):(isset($_POST['kategorie'])?(valid_id('tblKategorie',
-                'id_kategorie',$_POST['kategorie'])?mysql_real_escape_string($_POST['kategorie']):''):''));
+                $db->real_escape_string($_GET['kategorie']):''):(isset($_POST['kategorie'])?(valid_id('tblKategorie',
+                'id_kategorie',$_POST['kategorie'])?$db->real_escape_string($_POST['kategorie']):''):''));
 
     // Formulare anzeigen
     //Gericht hinzufügen
@@ -50,7 +50,7 @@ if(isset($_SESSION['restaurant']))
                     WHERE dtBezeichnung LIKE '".$_POST['DATA_bezeichnung']."'
                     AND fi_kategorie=".$_POST['kategorie'];
             if(($showFormEdit)&&(valid_id('tblGericht','id_gericht',$_POST['id'])))
-                $query.=" AND id_gericht<>".mysql_real_escape_string($_POST['id']);
+                $query.=" AND id_gericht<>".$db->real_escape_string($_POST['id']);
             $result=mysqli_query($db,$query);
             if(mysqli_num_rows($result)==1)
             {

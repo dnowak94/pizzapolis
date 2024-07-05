@@ -9,8 +9,8 @@ if($_SESSION['cmsloggedin']==1)
     if(!isset($showFormAdd)) $showFormAdd=false;
     if(!isset($showFormEdit)) $showFormEdit=false;
 
-    $id=(isset($_GET['id'])?(valid_id('tblSeite','id_seite',$_GET['id'])?mysql_real_escape_string($_GET['id']):''):
-        (isset($_POST['id'])?(valid_id('tblSeite','id_seite',$_POST['id'])?mysql_real_escape_string($_POST['id']):''):
+    $id=(isset($_GET['id'])?(valid_id('tblSeite','id_seite',$_GET['id'])?$db->real_escape_string($_GET['id']):''):
+        (isset($_POST['id'])?(valid_id('tblSeite','id_seite',$_POST['id'])?$db->real_escape_string($_POST['id']):''):
             ''));
 
     // Eingabe-Felder
@@ -97,7 +97,7 @@ if($_SESSION['cmsloggedin']==1)
                             db_update($_POST['DATA_istSichtbar']).",".
                             db_update($_POST['DATA_istMenu']).",".
                             $_SESSION['id_admin'].")";
-                    mysqli_query($qadd,$db);
+                    mysqli_query($db, $qadd);
                     $showFormAdd=false;
                 }
             }
@@ -113,7 +113,7 @@ if($_SESSION['cmsloggedin']==1)
                         "dtZeitstempel='".db_update($timestamp)."',".
                         "fi_ersteller=".$_SESSION['id_admin'].
                         " WHERE id_seite=".$id;
-                mysqli_query($qedit,$db);
+                mysqli_query($db,$qedit);
                 $showFormEdit=false;
             }
         }
@@ -130,7 +130,7 @@ if($_SESSION['cmsloggedin']==1)
     {
         $qdel="DELETE FROM tblSeite WHERE id_seite=".$id;
         //echo $qdel;
-        mysqli_query($qdel,$db);
+        mysqli_query($db, $qdel);
     }
     
     //Debug

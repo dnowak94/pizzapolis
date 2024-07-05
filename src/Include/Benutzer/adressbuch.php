@@ -7,8 +7,8 @@ if(isset($_SESSION['id_user']))
     // Eingabe
 
     // GET, POST id und kategorie speichern
-    $id=(isset($_GET['id'])?(valid_id('tblAdresse','id_adresse',$_GET['id'])?mysql_real_escape_string($_GET['id']):''):
-        (isset($_POST['id'])?(valid_id('tblAdresse','id_adresse',$_POST['id'])?mysql_real_escape_string($_POST['id']):
+    $id=(isset($_GET['id'])?(valid_id('tblAdresse','id_adresse',$_GET['id'])?$db->real_escape_string($_GET['id']):''):
+        (isset($_POST['id'])?(valid_id('tblAdresse','id_adresse',$_POST['id'])?$db->real_escape_string($_POST['id']):
         ''):''));
 
     // Formulare anzeigen

@@ -37,7 +37,7 @@ if(isset($_POST['BUTTON_sendLogin']))
 				AND 
 				(dtPasswort=SHA1('".db_update($_POST['DATA_password'])."'))
 				AND istAktiviert=1";
-		$result=mysqli_query($qlogin,$db);	
+		$result=mysqli_query($db, $qlogin);	
 		if(mysqli_num_rows($result)==1) 
 		{
 			if((db_result($result,0,'istRestaurant')==1)||(db_result($result,0,'istAdmin')==1))
